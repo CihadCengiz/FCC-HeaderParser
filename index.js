@@ -14,8 +14,8 @@ app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 2
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
-// // trust proxy for getting ip directly with req.ip
-// app.set("trust proxy", true);
+// trust proxy for getting ip directly with req.ip
+app.set("trust proxy", true);
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function (req, res) {
@@ -28,7 +28,7 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get("/api/whoami", (req, res) => {
-  res.json({ipadress:req.ip, language: req.headers["accept-language"], software: req.headers["user-agent"]})
+  res.json({ipaddress:req.ip, language: req.headers["accept-language"], software: req.headers["user-agent"]})
 })
 
 // listen for requests :)
